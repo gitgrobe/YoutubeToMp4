@@ -2,5 +2,6 @@ Usage:
 * python server/server.py
 ---
 Required python libraries:
-* Flask
-* Unirest
+* flask
+* unirest
+* firebase_admin
