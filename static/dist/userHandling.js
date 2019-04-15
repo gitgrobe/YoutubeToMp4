@@ -13,7 +13,7 @@
 
     const txtEmail = document.getElementById('txtEmail')
     const txtPassword = document.getElementById('txtPassword')
-    const btnLogin = document.getElementById('btnLogin')
+    const btnSignin = document.getElementById('btnSignin')
     const btnSignUp = document.getElementById('btnSignup')
     const btnLogout = document.getElementById('btnLogout')
     const historyOfDownloadsLink = document.getElementById('historyOfDownloadsLink')
@@ -23,8 +23,8 @@
 
     const historyOfDownloadsDiv = document.getElementById('historyOfDownloadsDiv')
 
-    if(btnLogin){
-        btnLogin.addEventListener('click', e => {
+    if(btnSignin){
+        btnSignin.addEventListener('click', e => {
             const email = txtEmail.value
             const pass = txtPassword.value
             const auth = firebase.auth()
@@ -32,7 +32,10 @@
             //Sign in
             const promise = auth.signInWithEmailAndPassword(email, pass)
 
-            promise.catch(e => console.log(e.message))
+            promise.
+            then(e => document.getElementById("logo").click()).
+            catch(e => document.getElementById("errmsg").innerHTML = e.message)
+
         })
     }
     if(btnLogout){
@@ -50,7 +53,8 @@
                 const promise = auth.createUserWithEmailAndPassword(email, pass)
 
                 promise.
-                catch(e => console.log(e.message))
+                then(e => document.getElementById("logo").click()).
+                catch(e => document.getElementById("errmsg").innerHTML = e.message)
         })
     }
 
