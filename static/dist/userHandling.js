@@ -41,6 +41,7 @@
     if(btnLogout){
         btnLogout.addEventListener('click', e => {
             firebase.auth().signOut()
+            document.getElementById("logo").click()
         })
     }
     if(btnSignUp) {
@@ -59,6 +60,7 @@
     }
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
+        // on any state change of the user go back to home
         if(firebaseUser) {
             console.log(firebaseUser)
             if(btnLogout) btnLogout.classList.remove('hide')

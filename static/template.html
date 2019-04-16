@@ -28,7 +28,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
-        <a class="navbar-brand" href="{{ url_for('index') }}"><img style="height: 2em; width: 2em;" src="{{ url_for('static', filename='img/logo.png') }}" /></a>
+        <a class="navbar-brand" id="logo" href="{{ url_for('index') }}"><img style="height: 2em; width: 2em;" src="{{ url_for('static', filename='img/logo.png') }}" /></a>
         <a class="btn btn-primary" id="btnLogin" href="{{url_for('login')}}">Sign In</a>
         <a class="btn btn-primary hide" style="color:white;" id="btnLogout">Log Out</a>
       </div>
